@@ -139,6 +139,7 @@ const Swap = () => {
 
       queryClient.invalidateQueries({ queryKey: ['quote'] });
       setCallData(null);
+      setTxHash(null);
       setFromAmount('');
       
       // In a real app, you would wait for transaction to be mined
