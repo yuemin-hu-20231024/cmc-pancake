@@ -1,0 +1,244 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(28, 124, 28, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(28, 124, 28, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(28, 124, 28, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Wallet connection styles */
+.connect-button {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.connect-button:hover {
+  background-color: #0051b3;
+}
+
+.connect-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.wallet-connection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.wallet-connection .address {
+  font-family: monospace;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  background-color: #0051b3;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.wallet-connection .network {
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  background-color: #e8f4ff;
+  color: #0051b3;
+  font-weight: 500;
+}
+
+.wallet-connection .balance {
+  font-family: 'Courier New', monospace;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  background-color: #f0fff0;
+  color: #1c7c1c;
+  font-weight: 500;
+  border: 1px solid #c3e6c3;
+  width: 100%;
+  position: relative;
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.wallet-connection .balance-amount {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.last-updated {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 8px;
+  border-top: 1px dashed #c3e6c3;
+  padding-top: 5px;
+}
+
+.gas-price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 5px;
+  border-top: 1px dashed #c3e6c3;
+  padding-top: 5px;
+  font-family: 'Courier New', monospace;
+}
+
+.gas-price::before {
+  content: "⛽";
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  color: #1c7c1c;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+  width: 24px;
+  height: 24px;
+}
+
+.refresh-button:hover {
+  background-color: rgba(28, 124, 28, 0.1);
+  transform: rotate(30deg);
+}
+
+.refresh-button:active {
+  transform: rotate(180deg);
+}
+
+.wallet-connection .balance::after {
+  content: "";
+  display: none;
+}
+
+.wallet-connection .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.switch-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.switch-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.switch-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disconnect-button {
+  background-color: #ff4040;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.disconnect-button:hover {
+  background-color: #e03030;
+}
