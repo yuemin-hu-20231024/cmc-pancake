@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useConnect, useAccount, useDisconnect, useSwitchChain, useBalance, useFeeData } from 'wagmi'
 import { injected } from 'wagmi/connectors'
 import { getNetworkName, formatBalance, formatLastUpdated, formatGasPrice } from '../utils/chain'
@@ -34,12 +34,6 @@ export function ConnectWallet() {
       refetchOnMount: true,
     }
   })
-
-  // Refetch balance when chain changes
-  useEffect(() => {
-    // This effect will trigger a balance refetch
-    // whenever chainId changes due to the refetchOnMount setting
-  }, [chainId])
   
   // Find the current chain from supported chains
   const currentChain: ChainInfo | undefined = SUPPORTED_CHAINS.find(chain => chain.id === chainId)
